@@ -1,0 +1,28 @@
+apt install mariadb-server mariadb-client
+
+mysql --version
+
+vim /etc/mysql/mysql.conf.d/mysqld.cnf
+
+vim /etc/mysql/mariadb.conf.d/50-server.cnf
+
+bind-address            = 0.0.0.0
+
+key_buffer_size         = 128M
+
+max_allowed_packet      = 256M
+
+max_connections        = 1000
+
+query_cache_limit       = 10M
+
+query_cache_size        = 200M
+
+character-set-server  = utf8mb4
+
+collation-server      = utf8mb4_general_ci
+
+#Variable (phpmyadmin/server_variables.php) sql mode = NO_AUTO_CREATE_USER,​NO_ENGINE_SUBSTITUTION
+
+
+hanyajasa@gmail.com - www.HanyaJasa.com - 06062022
