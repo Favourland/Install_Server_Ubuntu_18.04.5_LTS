@@ -22,7 +22,16 @@ character-set-server  = utf8mb4
 
 collation-server      = utf8mb4_general_ci
 
-#Variable (phpmyadmin/server_variables.php) sql mode = NO_AUTO_CREATE_USER,​NO_ENGINE_SUBSTITUTION
+-
 
+#Variables (phpmyadmin/server_variables.php):
+
+sql mode = NO_AUTO_CREATE_USER,​NO_ENGINE_SUBSTITUTION
+
+innodb buffer pool size = 128.000 MiB
+
+innodb io capacity = 200
+
+-
 
 hanyajasa@gmail.com - www.HanyaJasa.com - 06062022
