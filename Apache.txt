@@ -1,0 +1,96 @@
+vim /etc/apache2/mods-available/status.conf
+
+<Files server-status>
+
+SetHandler server-status
+
+Allow from all
+
+#Require local
+
+# Use "Require ip" lines to restrict access from only certain IP addresses.
+
+# Require ip 127.0.0.1
+
+# Require ip 1.2.3.4
+
+</Files>
+
+-
+
+/etc/apache2/mods-available/mpm_prefork.conf
+
+a2enmod mpm_prefork
+
+<IfModule prefork.c>
+
+   prefork VPS Contabo 5 Euro
+   
+   StartServers        20
+   
+   MinSpareServers     20
+   
+   MaxSpareServers     40
+   
+   MaxRequestWorkers   600
+   
+   MaxRequestsPerChild 4
+   
+   MaxClients          1000
+   
+   ServerLimit         1500
+   
+   -
+   
+   prefork VPS Contabo 10 Euro
+   
+   StartServers        40
+   
+   MinSpareServers     40
+   
+   MaxSpareServers     80
+   
+   MaxRequestWorkers   1200
+   
+   MaxRequestsPerChild 8
+   
+   MaxClients          2000
+   
+   ServerLimit         3000
+   
+</IfModule>
+
+-
+
+KeepAlive Off
+
+<IfModule prefork.c>
+
+   StartServers 400
+   
+   MinSpareServers 5
+   
+   MaxSpareServers 50
+   
+   MaxClients 4000
+   
+   MaxRequestsPerChild 100
+   
+</IfModule>
+
+-
+
+<IfModule prefork.c>
+   StartServers        400
+   
+   MinSpareServers     5
+   
+   MaxSpareServers     50
+   
+   MaxClients          4000
+   
+   ServerLimit         6000
+   
+   MaxRequestsPerChild 100
+   
+</IfModule>
